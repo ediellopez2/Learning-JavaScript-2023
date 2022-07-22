@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Title Case a Sentence</title>
+</head>
+
+<body>
+  <script>
+
+    // Title Case a Sentence
+    // Return the provided string with the first letter of each word capitalized. 
+    // Make sure the rest of the word is in lower case.
+    // https://www.w3schools.com/jsref/jsref_tolowercase.asp
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+    // https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript 
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+    function titleCase(str) {
+
+      let newStr = str.toLowerCase().split(" ");
+
+      for (let index = 0; index < newStr.length; index++) {
+        newStr[index] = newStr[index].charAt(0).toUpperCase() + newStr[index].slice(1);
+      }
+
+      // console.log(newStr.join(" ")); 
+
+      return newStr.join(" ");
+    }
+
+    titleCase("I'm a little tea pot");
+  </script>
+</body>
+
+</html>
