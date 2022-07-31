@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <h1>Open the Developer Tools</h1>
+
+  <!-- Falsy Bouncer -->
+  <!-- Remove all falsy values from an array.
+  Falsy values in JavaScript are false, null, 0, "", undefined, and NaN. -->
+
+  <!-- References -->
+  <!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean -->
+  <script>
+    function bouncer(arr) {
+      return arr.filter(Boolean);
+    }
+
+    bouncer([7, "ate", "", false, 9]);
+  </script>
+</body>
+
+</html>
