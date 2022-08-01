@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <h1>Open the Developer Tools</h1>
+
+  <!-- Chunky Monkey
+  Write a function that splits an array (first argument) into groups the 
+  length of size (second argument) and returns them as a two-dimensional array. -->
+  
+  <script>
+    function chunkArrayInGroups(arr, size) {
+      // This will be an array of arrays
+      let masterArray = [];
+
+      // This is an array that will be pushed into masterArray
+      let childArray = [];
+
+      // Let's determine how many "balanced/filled" child arrays of SIZE we can make
+      // by seeing how many values will be left out of a "balanced/filled" child array.
+      let value = arr.length % size;
+      // console.log(value);
+
+      // Use this for loop to make "balanced/filled" child arrays
+      for (let i = 0; i < arr.length - value; i = i + size) {
+        for (let j = 0; j < size; j++) {
+          childArray.push(arr[i + j]);
+        }
+        masterArray.push(childArray);
+        childArray = [];
+      }
+
+      // Here is were we deal with the left over values that make
+      // a partial array.
+      if (value > 0) {
+        // console.log(arr.slice(-value));
+        masterArray.push(arr.slice(-value));
+      }
+
+      // console.log(masterArray);
+      return masterArray;
+    }
+
+    console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));
+    console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3));
+
+    // Passed:chunkArrayInGroups(["a", "b", "c", "d"], 2) should return [["a", "b"], ["c", "d"]].
+    // Passed:chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3) should return [[0, 1, 2], [3, 4, 5]].
+    // Passed:chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2) should return [[0, 1], [2, 3], [4, 5]].
+    // Passed:chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4) should return [[0, 1, 2, 3], [4, 5]].
+    // Passed:chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3) should return [[0, 1, 2], [3, 4, 5], [6]].
+    // Passed:chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4) should return [[0, 1, 2, 3], [4, 5, 6, 7], [8]].
+    // Passed:chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2) should return [[0, 1], [2, 3], [4, 5], [6, 7], [8]].
+  </script>
+</body>
+
+</html>
