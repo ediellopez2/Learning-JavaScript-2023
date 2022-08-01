@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <h1>Open the Developer Tools</h1>
+
+  <!-- Where do I Belong
+  Return the lowest index at which a value (second argument) should be inserted 
+  into an array (first argument) once it has been sorted. The returned value 
+  should be a number. -->
+  <!-- Reference
+  https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly -->
+  <script>
+    function getIndexToIns(arr, num) {
+
+    if (arr.lenth == 0)
+      return 0;
+
+    // Sort numbers in ascending order.
+    arr.sort(function(a, b) {return a - b;});
+
+    let result = 0;
+    for (let index = 0; index < arr.length; index++) {
+      // If num already exists in arr, return the index of num in arr.
+      if (arr[index] == num) {
+        result = index;
+      }
+      else if (num > arr[index]) {
+        // Find the index where num is > than the present value in arr[index].
+        result = index+1;
+      }
+    }
+
+    return result;
+    }
+
+    getIndexToIns([40, 60], 50);
+    getIndexToIns([5, 3, 20, 3], 5);
+  </script>
+</body>
+
+</html>
