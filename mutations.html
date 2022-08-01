@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <h1>Open the Developer Tools</h1>
+
+
+  <!-- Mutations
+  
+  Return true if the string in the first element of the array contains all of the 
+  letters of the string in the second element of the array.
+
+  For example, ["hello", "Hello"], should return true because all of the letters 
+  in the second string are present in the first, ignoring case. -->
+  <script>
+    function mutation(arr) {
+
+      let word = arr[0].toLowerCase();
+      let keyword = arr[1].toLowerCase();
+
+      // If any character in keyword is not found in word, return false.
+      for (let index = 0; index < keyword.length; index++) {
+        if (word.indexOf(keyword[index]) == -1) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    console.log(mutation(["hello", "hey"]));
+  </script>
+</body>
+
+</html>
