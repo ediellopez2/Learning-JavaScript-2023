@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Object basics: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <!-- <link rel="stylesheet" href="../styles.css" /> -->
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    // https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Test_your_skills:_Object_basics#object_basics_2
+    let bandInfo;
+
+    // Add your code here
+    // =====================================================
+    const band = {
+      name: 'Coldplay',
+      nationality: 'British',
+      genre: 'Alternative Rock',
+      members: 4,
+      formed: 1996,
+      split: false,
+      albums: [['Parachutes', 2000],['A Head Full of Dreams', 2018]]
+    }
+
+    console.log(band);
+
+    bandInfo = band.name + " is a " + band.nationality + " " + band.genre + " band that was founded in " + band.formed + ". They released " + band.albums[0][0] + " in " + band.albums[0][1] + "."
+   
+    // =====================================================
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+    let para1 = document.createElement('p');
+    para1.textContent = bandInfo;
+    section.appendChild(para1);
+  </script>
+
+</html>
